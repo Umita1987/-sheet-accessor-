@@ -40,29 +40,6 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## Формат локального входа (`sample_input.csv`)
-
-Пример минимального `sample_input.csv`:
-
-```csv
-NAME,PASSWORD,PID,TIME START,RANDOM START, h,WORKING TIME, h,RANDOM WORKING TIME, h,IDENTIFICATOR
-program1,password1,pid123123,,0.3,5,1.5,ac=*-666666
-program2,password2,pid123123,,0.3,5,1.5,ac=*-666666
-program3,password3,pid123123,,0.3,5,1.5,ac=*-333333
-program4,password4,pid123123,,0.3,5,1.5,ac=*-666666
-program5,password5,pid123123,,0.3,5,1.5,ac=*-7777
-program6,password6,pid123123,,0.3,5,1.5,ac=*-666555
-program7,password7,pid123123,,0.3,5,1.5,ac=*-7777
-program8,password8,pid123123,,0.3,5,1.5,ac=*-666555
-```
-
-- `NAME` должен начинаться с `program` (используется для фильтрации).  
-- `RANDOM START, h`, `WORKING TIME, h`, `RANDOM WORKING TIME, h` — параметры в часах.  
-- `IDENTIFICATOR` может быть в форме `ac=*-666666` или просто `666666`; скрипт извлечёт идентификатор.  
-- `TIME START` можно оставить пустым — будет заполнено.
-
-Файл должен быть в кодировке UTF-8.
-
 ## Примеры запуска
 
 ### 1. Локально (без Google Sheets):
@@ -90,11 +67,6 @@ python main.py --sheet <URL или ключ таблицы> --output result.csv
 
 - `result.csv` — итоговое расписание с подобранными базовыми стартами и worst-case окнами. Пример колонок:
 
-```csv
-NAME,IDENTIFICATOR,TIME START,earliest_start,latest_end
-program1,666666,00:18,00:00,07:06
-...
-```
 
 ## Поведение и fallback
 
