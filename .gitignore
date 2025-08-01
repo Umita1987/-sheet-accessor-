@@ -1,0 +1,36 @@
+# Python
+pycache/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtualenv
+venv/
+env/
+ENV/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Migrations (если нужно)
+*/migrations/pycache/
+*.sqlite3
+
+.venv/
+venv/
+env/
+/creds.json
